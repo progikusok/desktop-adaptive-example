@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Desktop Adaptive</title>
+    <meta name="description" content="" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <meta property="og:image" content="path/to/image.jpg" />
+
+    <link
+      rel="shortcut icon"
+      href="img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="img/favicon/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="img/favicon/apple-touch-icon-114x114.png"
+    />
+
+    <!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
+    <script>
+      !(function (e) {
+        "use strict";
+        function t(e, t, n) {
+          e.addEventListener
+            ? e.addEventListener(t, n, !1)
+            : e.attachEvent && e.attachEvent("on" + t, n);
+        }
+        function n(t, n) {
+          return (
+            e.localStorage &&
+            localStorage[t + "_content"] &&
+            localStorage[t + "_file"] === n
+          );
+        }
+        function a(t, a) {
+          if (e.localStorage && e.XMLHttpRequest)
+            n(t, a) ? o(localStorage[t + "_content"]) : l(t, a);
+          else {
+            var s = r.createElement("link");
+            (s.href = a),
+              (s.id = t),
+              (s.rel = "stylesheet"),
+              (s.type = "text/css"),
+              r.getElementsByTagName("head")[0].appendChild(s),
+              (r.cookie = t);
+          }
+        }
+        function l(e, t) {
+          var n = new XMLHttpRequest();
+          n.open("GET", t, !0),
+            (n.onreadystatechange = function () {
+              4 === n.readyState &&
+                200 === n.status &&
+                (o(n.responseText),
+                (localStorage[e + "_content"] = n.responseText),
+                (localStorage[e + "_file"] = t));
+            }),
+            n.send();
+        }
+        function o(e) {
+          var t = r.createElement("style");
+          t.setAttribute("type", "text/css"),
+            r.getElementsByTagName("head")[0].appendChild(t),
+            t.styleSheet ? (t.styleSheet.cssText = e) : (t.innerHTML = e);
+        }
+        var r = e.document;
+        (e.loadCSS = function (e, t, n) {
+          var a,
+            l = r.createElement("link");
+          if (t) a = t;
+          else {
+            var o;
+            (o = r.querySelectorAll
+              ? r.querySelectorAll("style,link[rel=stylesheet],script")
+              : (r.body || r.getElementsByTagName("head")[0]).childNodes),
+              (a = o[o.length - 1]);
+          }
+          var s = r.styleSheets;
+          (l.rel = "stylesheet"),
+            (l.href = e),
+            (l.media = "only x"),
+            a.parentNode.insertBefore(l, t ? a : a.nextSibling);
+          var c = function (e) {
+            for (var t = l.href, n = s.length; n--; )
+              if (s[n].href === t) return e();
+            setTimeout(function () {
+              c(e);
+            });
+          };
+          return (
+            (l.onloadcssdefined = c),
+            c(function () {
+              l.media = n || "all";
+            }),
+            l
+          );
+        }),
+          (e.loadLocalStorageCSS = function (l, o) {
+            n(l, o) || r.cookie.indexOf(l) > -1
+              ? a(l, o)
+              : t(e, "load", function () {
+                  a(l, o);
+                });
+          });
+      })(this);
+    </script>
+
+    <!-- Load CSS Start -->
+    <script>
+      loadLocalStorageCSS("webfonts", "css/fonts.min.css?ver=1.0.0");
+    </script>
+    <script>
+      loadCSS("css/main.min.css?ver=1.0.0", false, "all");
+    </script>
+    <!-- Load CSS End -->
+
+    <!-- Load CSS Compiled without JS -->
+    <noscript>
+      <link rel="stylesheet" href="css/fonts.min.css" />
+      <link rel="stylesheet" href="css/main.min.css" />
+    </noscript>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__logo">Кекфликс</div>
+      <div class="header__menu menu">
+        <div class="menu__item">Новые</div>
+        <div class="menu__item">Популярные</div>
+        <div class="menu__item">Лучшие</div>
+        <div class="menu__item">Мультфильмы</div>
+        <div class="menu__item">Фильмы</div>
+        <div class="menu__item">Аниме</div>
+        <div class="menu__item">Помощь</div>
+        <div class="menu__item">Другое</div>
+      </div>
+      <div class="header__user">
+        <svg
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 512 512"
+          style="enable-background: new 0 0 512 512"
+          xml:space="preserve"
+        >
+          <g>
+            <g>
+              <path
+                d="M333.187,237.405c32.761-23.893,54.095-62.561,54.095-106.123C387.282,58.893,328.389,0,256,0
+			S124.718,58.893,124.718,131.282c0,43.562,21.333,82.23,54.095,106.123C97.373,268.57,39.385,347.531,39.385,439.795
+			c0,39.814,32.391,72.205,72.205,72.205H400.41c39.814,0,72.205-32.391,72.205-72.205
+			C472.615,347.531,414.627,268.57,333.187,237.405z M164.103,131.282c0-50.672,41.225-91.897,91.897-91.897
+			s91.897,41.225,91.897,91.897S306.672,223.18,256,223.18S164.103,181.954,164.103,131.282z M400.41,472.615H111.59
+			c-18.097,0-32.82-14.723-32.82-32.821c0-97.726,79.504-177.231,177.231-177.231s177.231,79.504,177.231,177.231
+			C433.231,457.892,418.508,472.615,400.41,472.615z"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section__title">Недавно смотрели</h2>
+
+      <div class="cards">
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/lala.webp)"
+          ></div>
+          <div class="card__title">Ла-ла ленд</div>
+          <div class="card__tag tag success">7.5</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/malysh.webp)"
+          ></div>
+          <div class="card__title">Малыш на драйве</div>
+          <div class="card__tag tag warning">6.0</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/tittanic.webp)"
+          ></div>
+          <div class="card__title">Титаник</div>
+          <div class="card__tag tag success">9.2</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/holivood.webp)"
+          ></div>
+          <div class="card__title">Однажды в голивуде</div>
+          <div class="card__tag tag danger">4.3</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/venom2.webp)"
+          ></div>
+          <div class="card__title">Веном 2</div>
+          <div class="card__tag tag success">8.3</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/tvari.webp)"
+          ></div>
+          <div class="card__title">Фантастические твари</div>
+          <div class="card__tag tag success">9.1</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/dgentelmens.webp)"
+          ></div>
+          <div class="card__title">Джентельмены</div>
+          <div class="card__tag tag success">8.4</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/parasit.webp)"
+          ></div>
+          <div class="card__title">Паразиты</div>
+          <div class="card__tag tag success">9.6</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/hero.webp)"
+          ></div>
+          <div class="card__title">Главный герой</div>
+          <div class="card__tag tag warning">5.7</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/venom2.webp)"
+          ></div>
+          <div class="card__title">Марсианин</div>
+          <div class="card__tag tag success">8.3</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">ТОП 10</h2>
+
+      <div class="cards">
+        <div class="cards__card card large">
+          <div class="card__number">1</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/tvari.webp)"
+          ></div>
+          <div class="card__title">Фантастические твари</div>
+          <div class="card__tag tag success">9.1</div>
+        </div>
+
+        <div class="cards__card card large">
+          <div class="card__number">2</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/parasit.webp)"
+          ></div>
+          <div class="card__title">Паразиты</div>
+          <div class="card__tag tag success">9.6</div>
+        </div>
+
+        <div class="cards__card card large">
+          <div class="card__number">3</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/hero.webp)"
+          ></div>
+          <div class="card__title">Главный герой</div>
+          <div class="card__tag tag warning">5.7</div>
+        </div>
+
+        <div class="cards__card card large">
+          <div class="card__number">4</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/venom2.webp)"
+          ></div>
+          <div class="card__title">Марсианин</div>
+          <div class="card__tag tag success">8.3</div>
+        </div>
+
+        <div class="cards__card card large">
+          <div class="card__number">5</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/dgentelmens.webp)"
+          ></div>
+          <div class="card__title">Джентельмены</div>
+          <div class="card__tag tag success">8.4</div>
+        </div>
+
+        <div class="cards__card card large">
+          <div class="card__number">6</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/lala.webp)"
+          ></div>
+          <div class="card__title">Ла-ла ленд</div>
+          <div class="card__tag tag success">7.5</div>
+        </div>
+
+        <div class="cards__card card large">
+          <div class="card__number">7</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/malysh.webp)"
+          ></div>
+          <div class="card__title">Малыш на драйве</div>
+          <div class="card__tag tag warning">6.0</div>
+        </div>
+
+        <div class="cards__card card large">
+          <div class="card__number">8</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/tittanic.webp)"
+          ></div>
+          <div class="card__title">Титаник</div>
+          <div class="card__tag tag success">9.2</div>
+        </div>
+
+        <div class="cards__card card large">
+          <div class="card__number">9</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/holivood.webp)"
+          ></div>
+          <div class="card__title">Однажды в голивуде</div>
+          <div class="card__tag tag danger">4.3</div>
+        </div>
+
+        <div class="cards__card card large">
+          <div class="card__number">10</div>
+          <div
+            class="card__image"
+            style="background-image: url(img/venom2.webp)"
+          ></div>
+          <div class="card__title">Веном 2</div>
+          <div class="card__tag tag success">8.3</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Новые</h2>
+
+      <div class="cards">
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/dgentelmens.webp)"
+          ></div>
+          <div class="card__title">Джентельмены</div>
+          <div class="card__tag tag success">8.4</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/parasit.webp)"
+          ></div>
+          <div class="card__title">Паразиты</div>
+          <div class="card__tag tag success">9.6</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/hero.webp)"
+          ></div>
+          <div class="card__title">Главный герой</div>
+          <div class="card__tag tag warning">5.7</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/venom2.webp)"
+          ></div>
+          <div class="card__title">Марсианин</div>
+          <div class="card__tag tag success">8.3</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/lala.webp)"
+          ></div>
+          <div class="card__title">Ла-ла ленд</div>
+          <div class="card__tag tag success">7.5</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/malysh.webp)"
+          ></div>
+          <div class="card__title">Малыш на драйве</div>
+          <div class="card__tag tag warning">6.0</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/tittanic.webp)"
+          ></div>
+          <div class="card__title">Титаник</div>
+          <div class="card__tag tag success">9.2</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/holivood.webp)"
+          ></div>
+          <div class="card__title">Однажды в голивуде</div>
+          <div class="card__tag tag danger">4.3</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/venom2.webp)"
+          ></div>
+          <div class="card__title">Веном 2</div>
+          <div class="card__tag tag success">8.3</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/tvari.webp)"
+          ></div>
+          <div class="card__title">Фантастические твари</div>
+          <div class="card__tag tag success">9.1</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Популярные</h2>
+
+      <div class="cards">
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/lala.webp)"
+          ></div>
+          <div class="card__title">Ла-ла ленд</div>
+          <div class="card__tag tag success">7.5</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/malysh.webp)"
+          ></div>
+          <div class="card__title">Малыш на драйве</div>
+          <div class="card__tag tag warning">6.0</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/tittanic.webp)"
+          ></div>
+          <div class="card__title">Титаник</div>
+          <div class="card__tag tag success">9.2</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/holivood.webp)"
+          ></div>
+          <div class="card__title">Однажды в голивуде</div>
+          <div class="card__tag tag danger">4.3</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/venom2.webp)"
+          ></div>
+          <div class="card__title">Веном 2</div>
+          <div class="card__tag tag success">8.3</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/tvari.webp)"
+          ></div>
+          <div class="card__title">Фантастические твари</div>
+          <div class="card__tag tag success">9.1</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/dgentelmens.webp)"
+          ></div>
+          <div class="card__title">Джентельмены</div>
+          <div class="card__tag tag success">8.4</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/parasit.webp)"
+          ></div>
+          <div class="card__title">Паразиты</div>
+          <div class="card__tag tag success">9.6</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/hero.webp)"
+          ></div>
+          <div class="card__title">Главный герой</div>
+          <div class="card__tag tag warning">5.7</div>
+        </div>
+
+        <div class="cards__card card">
+          <div
+            class="card__image"
+            style="background-image: url(img/venom2.webp)"
+          ></div>
+          <div class="card__title">Марсианин</div>
+          <div class="card__tag tag success">8.3</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__content">
+        Страница создана для демонстрации адаптивного подхода. Все совпадения
+        случайны: названия фильмов, сериалов, рейтинги, изображения.
+      </div>
+    </footer>
+  </body>
+</html>

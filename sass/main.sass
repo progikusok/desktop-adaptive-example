@@ -1,0 +1,138 @@
+@import "bourbon"
+
+@import "functions.sass"
+@import "vars.sass"
+
+html 
+	font-size: calc-between-width(1600, 16, 1920, 19.2)
+
+body
+	font-size: 1rem
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "RobotoRegular", sans-serif
+	overflow-x: hidden
+	margin: 0
+	padding: 0
+
+.hidden
+	display: none
+
+
+.header
+	width: 100%
+	display: flex
+	align-items: center
+	justify-content: space-between
+	height: rem(80)
+	background: $surfaceColor
+	padding: rem(10) rem(40)
+	box-sizing: border-box
+	margin-bottom: rem(10)
+
+	&__logo
+		font-size: rem(20)
+		letter-spacing: rem(2)
+
+	&__menu
+		display: flex
+		gap: rem(30)
+		font-size: rem(14)
+	
+	&__user
+		width: rem(40)
+		height: rem(40)
+		padding: rem(10)
+		box-sizing: border-box
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 100%
+		background-color: $neutralColor
+
+.section
+	display: flex
+	flex-direction: column
+
+
+	&__title
+		margin: rem(20) rem(40) rem(20) rem(40)
+
+.cards
+	display: flex
+	gap: rem(30)
+	overflow-x: auto
+	padding: rem(20) rem(40)
+
+
+.card
+	width: rem(310)
+	flex: none
+	position: relative
+
+	&__tag
+		position: absolute
+		right: rem(20)
+		top: rem(10)
+
+	&__image
+		height: rem(175)
+		background-color: $surfaceColor
+		border-radius: rem(30)
+		background-size: cover
+		background-position: center
+
+	&__title
+		margin-top: rem(16)
+
+	&__number
+		font-size: rem(25)
+		width: rem(50)
+		height: rem(50)
+		position: absolute
+		top: rem(-20)
+		left: rem(-20)
+		line-height: 1
+		background-color: $primaryColor
+		border-radius: 100%
+		color: $neutralColor
+		display: flex
+		align-items: center
+		justify-content: center
+
+	&.large
+		width: rem(480)
+
+		.card__image
+			height: rem(266)
+
+.tag
+	padding: rem(3) rem(10)
+	border-radius: rem(4)
+	color: $neutralColor
+	flex: none
+	width: fit-content
+
+	&.success
+		background-color: $successColor
+
+	&.danger
+		background-color: $dangerColor
+
+	&.warning
+		background-color: $warningColor
+
+
+.footer
+	height: rem(260)
+	background: $surfaceColor
+	margin-top: rem(40)
+	display: flex
+	align-items: center
+	justify-content: center
+
+	&__content
+		width: 40%
+		text-align: center
+
